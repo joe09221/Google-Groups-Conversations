@@ -30,7 +30,7 @@ foreach ($group in $groups) {
     Write-Host "Checking group: $groupEmail" -ForegroundColor Yellow
     
     try {
-        # Get group settings - redirect stderr to null to avoid cluttering output
+        # Get group view conversation settings 
         $groupSettings = gam info group $groupEmail | select-string "whoCanViewGroup:"
         
         # Check if the group allows anyone on the web to view conversations
